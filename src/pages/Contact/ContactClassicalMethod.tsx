@@ -12,46 +12,56 @@ export default function ContactClassicalMethod() {
       sx={{
         width: "100%",
         height: "100%",
-        fontSize: 32,
         display: "flex",
+        flexDirection: "column",
       }}
     >
-      <Box width="40%"></Box>
       <Box sx={{}}>
-        <Typography variant="h6" color={Colors.Accent}>
-          w tradycyjny sposób:
+        <Typography variant="h6" color={Colors.Accent} align="center">
+          w tradycyjny sposób
         </Typography>
-        <BoxWithIcon>
-          <EmailIcon sx={{ color: Colors.Text }} />
-          <Link
-            href={`mailto:MSterczewski.IT@gmail.com`}
-            color="inherit"
-            underline="hover"
-          >
-            <Typography>MSterczewski.IT@gmail.com</Typography>
-          </Link>
-        </BoxWithIcon>
-        <BoxWithIcon>
-          <LinkedInIcon sx={{ color: Colors.Text }} />
-          <Link
-            href="https://www.linkedin.com/in/mateusz-sterczewski-730485200/"
-            underline="hover"
-            color="inherit"
-            target="_blank"
-          >
-            <Typography>Mateusz Sterczewski</Typography>
-          </Link>
-        </BoxWithIcon>
-        <BoxWithIcon>
-          <LocalPhoneIcon sx={{ color: Colors.Text }} />
-          <Link href={`tel:+48781019435`} color="inherit" underline="hover">
-            <Typography>+48 781 019 435</Typography>
-          </Link>
-        </BoxWithIcon>
-        <BoxWithIcon>
-          <LocationOnIcon sx={{ color: Colors.Text }} />
-          <Typography>Warszawa + online</Typography>
-        </BoxWithIcon>
+      </Box>
+      <Box
+        marginLeft={"10%"}
+        marginRight={"10%"}
+        display={"flex"}
+        flexDirection={"column"}
+        justifyContent={"center"}
+        height={"100%"}
+      >
+        <Box>
+          <BoxWithIcon>
+            <EmailIcon sx={{ color: Colors.Text }} />
+            <Link
+              href={`mailto:MSterczewski.IT@gmail.com`}
+              color="inherit"
+              underline="hover"
+            >
+              <Typography>MSterczewski.IT@gmail.com</Typography>
+            </Link>
+          </BoxWithIcon>
+          <BoxWithIcon>
+            <LinkedInIcon sx={{ color: Colors.Text }} />
+            <Link
+              href="https://www.linkedin.com/in/mateusz-sterczewski-730485200/"
+              underline="hover"
+              color="inherit"
+              target="_blank"
+            >
+              <Typography>Mateusz Sterczewski</Typography>
+            </Link>
+          </BoxWithIcon>
+          <BoxWithIcon>
+            <LocalPhoneIcon sx={{ color: Colors.Text }} />
+            <Link href={`tel:+48781019435`} color="inherit" underline="hover">
+              <Typography>+48 781 019 435</Typography>
+            </Link>
+          </BoxWithIcon>
+          <BoxWithIcon>
+            <LocationOnIcon sx={{ color: Colors.Text }} />
+            <Typography>Warszawa + online</Typography>
+          </BoxWithIcon>
+        </Box>
       </Box>
     </Box>
   );

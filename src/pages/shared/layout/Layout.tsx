@@ -5,16 +5,26 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import { Avatar, Link } from "@mui/material";
+import {
+  Avatar,
+  Link,
+  ThemeProvider,
+  createMuiTheme,
+  createTheme,
+  TextField,
+} from "@mui/material";
 import { AppRoutes } from "../../../resources/AppRoutes";
 import { Colors } from "../../../resources/Colors";
 import { useLocation } from "react-router-dom";
+import GetTheme from "./GetTheme";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
-  console.log(location);
+
+  const theme = GetTheme();
+
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <AppBar
         position="static"
         sx={{
@@ -22,7 +32,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         }}
       >
         <Container sx={{ width: "100%", margin: 0 }}>
-          <Toolbar disableGutters sx={{ width: "100%" }}>
+          <Toolbar sx={{ width: "100%", height: 64 }}>
             <Typography
               variant="h6"
               noWrap
@@ -30,7 +40,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               href={AppRoutes.Home}
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
+                //display: { xs: "none", md: "flex" },
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
@@ -67,7 +77,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </Container>
       </AppBar>
       {children}
-    </>
+    </ThemeProvider>
   );
 
   function MenuButton({ text, url }: { text: string; url: string }) {

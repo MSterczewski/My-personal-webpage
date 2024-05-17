@@ -12,25 +12,41 @@ import ContactForm from "./ContactForm";
 export default function Contact() {
   return (
     <Layout>
-      <Box marginTop="5%">
-        <Typography align="center" variant="h5" color={Colors.Accent}>
+      <Box>
+        <Typography
+          align="center"
+          variant="h4"
+          color={Colors.Accent}
+          marginTop={"3%"}
+          marginBottom={"3%"}
+        >
           Zapraszam do kontaktu
         </Typography>
         <Grid container>
-          <Grid item xs={5.8}>
+          <Grid item md={7} xs={12}>
             <ContactForm />
           </Grid>
-          <Grid item xs={0.4}>
+          <Grid
+            item
+            md={0.4}
+            xs={12}
+            sx={{ display: { xs: "none", md: "flex" } }}
+          >
             <Box
               sx={{
+                marginTop: "20px",
                 height: "100%",
-                marginTop: "50%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
               }}
             >
-              <Typography fontStyle="italic">Lub</Typography>
+              <Typography fontStyle="italic" align="center">
+                Lub
+              </Typography>
             </Box>
           </Grid>
-          <Grid item xs={5.8}>
+          <Grid item md={4.6} xs={12}>
             <ContactClassicalMethod />
           </Grid>
         </Grid>
