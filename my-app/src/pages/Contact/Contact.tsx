@@ -23,31 +23,11 @@ export default function Contact() {
           Zapraszam do kontaktu
         </Typography>
         <Grid container>
-          <Grid item md={7} xs={12}>
-            <ContactForm />
-          </Grid>
-          <Grid
-            item
-            md={0.4}
-            xs={12}
-            sx={{ display: { xs: "none", md: "flex" } }}
-          >
-            <Box
-              sx={{
-                marginTop: "20px",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-              }}
-            >
-              <Typography fontStyle="italic" align="center">
-                Lub
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item md={4.6} xs={12}>
+          <Grid item sm={6} md={4} lg={3} xs={12} order={{ xs: 2, sm: 1 }}>
             <ContactClassicalMethod />
+          </Grid>
+          <Grid item sm={6} md={8} lg={9} xs={12} order={{ xs: 1, sm: 2 }}>
+            <ContactForm />
           </Grid>
         </Grid>
       </Box>

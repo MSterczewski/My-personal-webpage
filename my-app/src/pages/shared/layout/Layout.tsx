@@ -4,15 +4,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import {
-  Avatar,
-  Link,
-  ThemeProvider,
-  createMuiTheme,
-  createTheme,
-  TextField,
-} from "@mui/material";
+import { Link, ThemeProvider } from "@mui/material";
 import { AppRoutes } from "../../../resources/AppRoutes";
 import { Colors } from "../../../resources/Colors";
 import { useLocation } from "react-router-dom";
@@ -40,7 +32,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               href={AppRoutes.Home}
               sx={{
                 mr: 2,
-                //display: { xs: "none", md: "flex" },
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
@@ -69,10 +60,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <MenuButton text="Moje projekty" url={AppRoutes.MyProjects} />
             <MenuButton text="O mnie" url={AppRoutes.AboutMe} />
             <MenuButton text="Kontakt" url={AppRoutes.Contact} />
-            <Box sx={{ flexGrow: 1, display: { xs: "flex" } }}></Box>
-            {/* <Box
-                  sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-                ></Box> */}
+            <Box sx={{ flexGrow: 1, display: { xs: "flex" } }} />
           </Toolbar>
         </Container>
       </AppBar>
@@ -90,18 +78,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           marginRight: "10px",
           textDecorationColor: Colors.Text,
         }}
-        underline={location.pathname == url ? "always" : "hover"}
+        underline={location.pathname === url ? "always" : "hover"}
         href={url}
+        display={{ xs: "none", sm: "flex" }}
       >
         {text}
       </Link>
-      // <Button
-      //   variant="text"
-      //   sx={{ color: Colors.Text, textTransform: "none" }}
-      //   onClick={() => navigate(url)}
-      // >
-      //   {text}
-      // </Button>
     );
   }
 }

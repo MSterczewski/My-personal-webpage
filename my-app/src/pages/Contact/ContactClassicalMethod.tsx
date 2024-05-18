@@ -1,10 +1,11 @@
-import { Box, Link, Typography } from "@mui/material";
+import { Avatar, Box, Link, Typography } from "@mui/material";
 
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import { Colors } from "../../resources/Colors";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import photo from "../../images/contact/IMG_5937.jpg";
 
 export default function ContactClassicalMethod() {
   return (
@@ -16,20 +17,25 @@ export default function ContactClassicalMethod() {
         flexDirection: "column",
       }}
     >
-      <Box sx={{}}>
+      {/* <Box sx={{}}>
         <Typography variant="h6" color={Colors.Accent} align="center">
           w tradycyjny sposób
         </Typography>
-      </Box>
+      </Box> */}
       <Box
-        marginLeft={"10%"}
-        marginRight={"10%"}
         display={"flex"}
         flexDirection={"column"}
         justifyContent={"center"}
         height={"100%"}
       >
-        <Box>
+        <Box alignSelf={"center"}>
+          <img
+            alt="Mateusz Sterczewski"
+            src={photo}
+            width={"270"}
+            height={"360"}
+          />
+
           <BoxWithIcon>
             <EmailIcon sx={{ color: Colors.Text }} />
             <Link

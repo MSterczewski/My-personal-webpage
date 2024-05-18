@@ -1,16 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import reportWebVitals from "./reportWebVitals";
-import { AppRoutes } from "./resources/AppRoutes";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Contact from "./pages/Contact/Contact";
-import AboutMe from "./pages/AboutMe/AboutMe";
-import MyProjects from "./pages/MyProjects/MyProjects";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import { AppRoutes } from './resources/AppRoutes';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Contact from './pages/Contact/Contact';
+import AboutMe from './pages/AboutMe/AboutMe';
+import MyProjects from './pages/MyProjects/MyProjects';
+import ContactThankYou from './pages/Contact/ContactThankYou';
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
@@ -18,6 +18,7 @@ root.render(
       <Routes>
         <Route path={AppRoutes.Home} element={<Contact />} />
         <Route path={AppRoutes.Contact} element={<Contact />} />
+        <Route path={AppRoutes.ContactThankYou} element={<ContactThankYou />} />
         <Route path={AppRoutes.AboutMe} element={<AboutMe />} />
         <Route path={AppRoutes.MyProjects} element={<MyProjects />} />
       </Routes>
