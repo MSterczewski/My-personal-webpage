@@ -6,66 +6,125 @@ import Backend from "./Services/Backend";
 import PageHeader from "../shared/PageHeader";
 import WebApp from "./Services/WebApp";
 import Frontend from "./Services/Frontend";
+import { useLocation, useNavigate } from "react-router-dom";
+import Cloud from "./Services/Cloud";
+
+interface Tab {
+  name: string;
+  hash: string;
+}
 
 export default function MyServices() {
-  const tabs = [
-    "Aplikacje internetowe",
-    "Back-end",
-    "Front-end",
-    "Projektowanie",
-    "Chmura",
-    "Analiza danych",
-    "Dydaktyka",
+  const webappHash = "web-applications";
+  const backendHash = "back-end";
+  const frontendHash = "front-end";
+  const cloudHash = "cloud";
+
+  const tabs: Tab[] = [
+    {
+      name: "Aplikacje internetowe",
+      hash: webappHash,
+    },
+    {
+      name: "Back-end",
+      hash: backendHash,
+    },
+    {
+      name: "Front-end",
+      hash: frontendHash,
+    },
+    // {
+    //   name: "Projektowanie",
+    //   hash: "design",
+    // },
+    {
+      name: "Chmura",
+      hash: cloudHash,
+    },
+    {
+      name: "Analiza danych",
+      hash: "data-science",
+    },
+    {
+      name: "Dydaktyka",
+      hash: "teaching",
+    },
   ];
-  const [selectedTab, setSelectedTab] = useState("Aplikacje internetowe");
+  const location = useLocation();
+  const [selectedTab, setSelectedTab] = useState(
+    location.hash
+      ? tabs.find((t) => t.hash == location.hash.replace("#", "")) ?? tabs[0]
+      : tabs[0]
+  );
+  const navigate = useNavigate();
 
   return (
     <Layout>
       <PageHeader text="Moje usługi" />
-      <Grid container marginBottom={"3%"} marginTop={"1%"} width={"100%"}>
+      <Grid container marginBottom={""} marginTop={""} width={"100%"}>
         <Grid item xs={2}>
           <Stack gap={1} marginRight={"20px"} marginLeft={"20px"}>
             {tabs.map((t) => (
-              <Box key={t}>
-                <Service tab={t} />
-              </Box>
+              <Service tab={t} />
             ))}
           </Stack>
         </Grid>
         <Grid item xs={10}>
-          {selectedTab === "Aplikacje internetowe" && <WebApp />}
-          {selectedTab === "Back-end" && <Backend />}
-          {selectedTab === "Front-end" && <Frontend />}
+          {serviceContentSwitch(selectedTab.hash)}
+          {/* can be rendered like here https://stackoverflow.com/questions/46592833/how-to-use-switch-statement-inside-a-react-component */}
+          {/* {selectedTab.hash === webappHash && <WebApp />}
+          {selectedTab.hash === backendHash && <Backend />}
+          {selectedTab.hash === frontendHash && <Frontend />} */}
         </Grid>
       </Grid>
     </Layout>
   );
 
-  function Service({ tab }: { tab: string }) {
-    const isSelected = selectedTab === tab;
+  function serviceContentSwitch(tabSwitch: string) {
+    switch (tabSwitch) {
+      case webappHash:
+        return <WebApp />;
+      case backendHash:
+        return <Backend />;
+      case frontendHash:
+        return <Frontend />;
+      case cloudHash:
+        return <Cloud />;
+      default:
+        return "W trakcie budowy";
+    }
+  }
+
+  function Service({ tab }: { tab: Tab }) {
+    const isSelected = selectedTab.hash === tab.hash;
     return (
-      <Button
-        sx={{
-          width: "100%",
-          height: "40px",
-          backgroundColor: isSelected ? Colors.Accent : Colors.Background,
-          borderColor: Colors.Text,
-          border: isSelected ? 0 : 1,
-          borderRadius: 7,
-          textTransform: "none",
-        }}
-        disabled={isSelected}
-        onClick={() => setSelectedTab(tab)}
-      >
-        <Typography
-          color={isSelected ? Colors.Background : Colors.Text}
-          fontWeight={isSelected ? "bold" : "normal"}
-          align="center"
-          width={"100%"}
+      <Box key={tab.hash}>
+        <Button
+          sx={{
+            width: "100%",
+            height: "40px",
+            backgroundColor: isSelected ? Colors.Accent : Colors.Background,
+            borderColor: Colors.Text,
+            border: isSelected ? 0 : 1,
+            borderRadius: 7,
+            textTransform: "none",
+          }}
+          disabled={isSelected}
+          onClick={() => {
+            navigate("#" + tab.hash);
+            setSelectedTab(tab);
+          }}
         >
-          {tab}
-        </Typography>
-      </Button>
+          <Typography
+            color={isSelected ? Colors.Background : Colors.Text}
+            fontWeight={isSelected ? "bold" : "normal"}
+            align="center"
+            width={"100%"}
+          >
+            {tab.name}
+          </Typography>
+        </Button>
+      </Box>
     );
   }
 }
