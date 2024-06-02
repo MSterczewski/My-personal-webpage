@@ -57,8 +57,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             >
               | Usługi IT
             </Typography>
-            <MenuButton text="Moje projekty" url={AppRoutes.MyProjects} />
-            <MenuButton text="O mnie" url={AppRoutes.AboutMe} />
+            {/* <MenuButton text="Moje projekty" url={AppRoutes.MyProjects} /> */}
+            {/* <MenuButton text="O mnie" url={AppRoutes.AboutMe} /> */}
+            <MenuButton text="Moje usługi" url={AppRoutes.MyServices} />
             <MenuButton text="Kontakt" url={AppRoutes.Contact} />
             <Box sx={{ flexGrow: 1, display: { xs: "flex" } }} />
           </Toolbar>

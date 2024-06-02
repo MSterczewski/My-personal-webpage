@@ -1,4 +1,4 @@
-import { Avatar, Box, Link, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import { Colors } from "../../resources/Colors";
@@ -23,19 +23,25 @@ export default function ContactClassicalMethod() {
         </Typography>
       </Box> */}
       <Box
+        marginTop={"5%"}
         display={"flex"}
         flexDirection={"column"}
         justifyContent={"center"}
         height={"100%"}
       >
-        <Box alignSelf={"center"}>
-          <img
-            alt="Mateusz Sterczewski"
-            src={photo}
-            width={"270"}
-            height={"360"}
-          />
-
+        <Box alignSelf={"center"} display={"flex"} flexDirection={"column"}>
+          <Box
+            width={{ xs: 210, sm: 270 }}
+            height={{ xs: 280, sm: 360 }}
+            alignSelf={"center"}
+          >
+            <img
+              alt="Mateusz Sterczewski"
+              src={photo}
+              width={"100%"}
+              height={"100%"}
+            />
+          </Box>
           <BoxWithIcon>
             <EmailIcon sx={{ color: Colors.Text }} />
             <Link

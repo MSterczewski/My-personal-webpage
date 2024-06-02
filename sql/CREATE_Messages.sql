@@ -4,6 +4,6 @@ CREATE TABLE Messages(
     Title CHAR(255) NOT NULL,
     Email CHAR(255) NOT NULL,
     Body TEXT NOT NULL,
-    IsReplied bit
+    IsReplied bit NOT NULL
     )
     

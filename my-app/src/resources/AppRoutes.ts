@@ -4,4 +4,5 @@ export const AppRoutes = {
   Contact: "/contact",
   ContactThankYou: "/contact/thank-you",
   MyProjects: "/my-projects",
+  MyServices: "my-services",
 };

@@ -2,19 +2,12 @@ import {
   Box,
   Button,
   CircularProgress,
-  Link,
   TextField,
   Typography,
 } from "@mui/material";
 
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import { Colors } from "../../resources/Colors";
-import EmailIcon from "@mui/icons-material/Email";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { useState } from "react";
 import axios from "axios";
-import { Addresses } from "../../resources/Addresses";
 import { Endpoints } from "../../resources/Endpoints";
 import { useNavigate } from "react-router-dom";
 import { AppRoutes } from "../../resources/AppRoutes";
@@ -31,12 +24,12 @@ export default function ContactForm() {
   function handleSubmit() {
     setIsSending(true);
     axios
-      .post(Addresses.ServerUrl + Endpoints.CreateMessage, {
+      .post(process.env.REACT_APP_SERVER_URL + Endpoints.CreateMessage, {
         title,
         email,
         body,
       })
-      .then((_) => navigate(AppRoutes.ContactThankYou));
+      .then(() => navigate(AppRoutes.ContactThankYou));
   }
 
   return (
@@ -60,7 +53,7 @@ export default function ContactForm() {
         display={"flex"}
         flexDirection={"column"}
       >
-        <Typography fontStyle={"italic"} fontWeight={"light"}>
+        <Typography>
           Opisz w czym mogę Ci pomóc, a skontaktuję się z Tobą w przeciągu kilku
           dni.
         </Typography>
@@ -75,7 +68,7 @@ export default function ContactForm() {
         />
         <TextField
           id="email"
-          label="Email"
+          label="Twój email"
           variant="outlined"
           margin="normal"
           autoComplete="email"
