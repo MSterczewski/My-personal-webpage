@@ -1,21 +1,60 @@
-import { Box } from "@mui/material";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import Layout from "../shared/layout/Layout";
+import { Colors } from "../../resources/Colors";
+import { useNavigate } from "react-router-dom";
+import { AppRoutes } from "../../resources/AppRoutes";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <Layout>
       <Box
-        sx={{
-          width: "100%",
-          height: "100%",
-          verticalAlign: "middle",
-          alignSelf: "center",
-          textAlign: "center",
-          fontSize: 32,
-        }}
+        marginLeft={2}
+        marginRight={2}
+        display={"flex"}
+        flexDirection={"column"}
+        justifyContent={"space-around"}
       >
-        Strona w budowie
+        <Typography
+          fontSize={36}
+          //marginTop={8}
+          fontWeight={"bold"}
+          color={Colors.Accent}
+          textAlign={"center"}
+          //marginBottom={6}
+          marginTop={10}
+          marginBottom={8}
+        >
+          Usługi informatyczne
+        </Typography>
+        <Box display={"flex"} justifyContent={"space-around"} marginBottom={8}>
+          <SingleService text={"Utrzymanie"} />
+          <SingleService text={"Projektowanie"} />
+          <SingleService text={"Consulting"} />
+          <SingleService text={"Tworzenie"} />
+        </Box>
+        <Box display={"flex"} justifyContent={"space-around"} marginBottom={8}>
+          <SingleService text={"Wysoka jakość"} />
+          <SingleService text={"Czysty kod"} />
+        </Box>
+
+        <Button
+          variant={"contained"}
+          sx={{ width: "30%", alignSelf: "center" }}
+          onClick={() => navigate(AppRoutes.Contact)}
+        >
+          Skontakuj się ze mną
+        </Button>
       </Box>
     </Layout>
   );
+
+  function SingleService({ text }: { text: string }) {
+    return (
+      <Typography fontWeight={"bold"} fontSize={18}>
+        {text}
+      </Typography>
+    );
+  }
 }

@@ -8,6 +8,8 @@ import WebApp from "./Services/WebApp";
 import Frontend from "./Services/Frontend";
 import { useLocation, useNavigate } from "react-router-dom";
 import Cloud from "./Services/Cloud";
+import DataScience from "./Services/DataScience";
+import Teaching from "./Services/Teaching";
 
 interface Tab {
   name: string;
@@ -19,6 +21,8 @@ export default function MyServices() {
   const backendHash = "back-end";
   const frontendHash = "front-end";
   const cloudHash = "cloud";
+  const dataScienceHash = "data-science";
+  const teachingHash = "teaching";
 
   const tabs: Tab[] = [
     {
@@ -43,11 +47,11 @@ export default function MyServices() {
     },
     {
       name: "Analiza danych",
-      hash: "data-science",
+      hash: dataScienceHash,
     },
     {
       name: "Dydaktyka",
-      hash: "teaching",
+      hash: teachingHash,
     },
   ];
   const location = useLocation();
@@ -57,6 +61,25 @@ export default function MyServices() {
       : tabs[0]
   );
   const navigate = useNavigate();
+
+  function serviceContentSwitch(tabSwitch: string) {
+    switch (tabSwitch) {
+      case webappHash:
+        return <WebApp />;
+      case backendHash:
+        return <Backend />;
+      case frontendHash:
+        return <Frontend />;
+      case cloudHash:
+        return <Cloud />;
+      case dataScienceHash:
+        return <DataScience />;
+      case teachingHash:
+        return <Teaching />;
+      default:
+        return "W trakcie budowy";
+    }
+  }
 
   return (
     <Layout>
@@ -79,21 +102,6 @@ export default function MyServices() {
       </Grid>
     </Layout>
   );
-
-  function serviceContentSwitch(tabSwitch: string) {
-    switch (tabSwitch) {
-      case webappHash:
-        return <WebApp />;
-      case backendHash:
-        return <Backend />;
-      case frontendHash:
-        return <Frontend />;
-      case cloudHash:
-        return <Cloud />;
-      default:
-        return "W trakcie budowy";
-    }
-  }
 
   function Service({ tab }: { tab: Tab }) {
     const isSelected = selectedTab.hash === tab.hash;
