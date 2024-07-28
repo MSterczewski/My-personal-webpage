@@ -10,6 +10,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Cloud from "./Services/Cloud";
 import DataScience from "./Services/DataScience";
 import Teaching from "./Services/Teaching";
+import { t } from "i18next";
 
 interface Tab {
   name: string;
@@ -83,7 +84,7 @@ export default function MyServices() {
 
   return (
     <Layout>
-      <PageHeader text="Moje usługi" />
+      <PageHeader text={t("my_services")} />
       <Grid container marginBottom={""} marginTop={""} width={"100%"}>
         <Grid item xs={2}>
           <Stack gap={1} marginRight={"20px"} marginLeft={"20px"}>

@@ -3,6 +3,9 @@ import { Colors } from "../../../resources/Colors";
 
 export default function GetTheme() {
   return createTheme({
+    typography: {
+      fontFamily: "montserrat",
+    },
     palette: {
       primary: {
         light: Colors.Background,
@@ -38,6 +41,18 @@ export default function GetTheme() {
           },
         },
       },
+      // MuiCssBaseline: {
+      //   styleOverrides: {
+      //     "@font-face": {
+      //       fontFamily: "montserrat",
+      //       src: `url(${MontserratRegular}) format("truetype")`,
+      //     },
+      //     body: {
+      //       fontSize: "3rem",
+      //       color: "purple",
+      //     },
+      //   },
+      // },
     },
   });
 }
