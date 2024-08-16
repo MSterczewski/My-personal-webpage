@@ -34,26 +34,24 @@ export default function Backend() {
 
   return (
     <ServiceLayout technologies={technologies}>
-      {
-        <Box>
-          <Typography>
-            Backend to wszystko co dzieje się "pod maską" strony internetowej.
-            Użytkownik bezpośrednio nie widzi efektów pracy serwera, ale jest on
-            kluczowy do poprawnego działania strony.
-          </Typography>
-          <Typography fontWeight={"bold"}>
-            <br /> Z czego zazwyczaj składa się backend?
-          </Typography>
-          <Typography>
-            W zależności od potrzeb produktu składa się z różnej liczby
-            komponentów, a każdy z nich ma inną wagę. Typowo backend składa się
-            z serwera (np. PHP, C#, Java, Node.js), bazy danych (np. SQL) oraz
-            usług chmurowych (np. AWS, Azure). Kluczowe jest również, aby dane
-            osobowe były odpowiednio chronione, a także zastosowana była
-            kryptografia tam, gdzie jest to wskazane.
-          </Typography>
-        </Box>
-      }
+      <Box width={"100%"}>
+        <Typography>
+          Backend to wszystko co dzieje się "pod maską" strony internetowej.
+          Użytkownik bezpośrednio nie widzi efektów pracy serwera, ale jest on
+          kluczowy do poprawnego działania strony.
+        </Typography>
+        <Typography fontWeight={"bold"}>
+          <br /> Z czego zazwyczaj składa się backend?
+        </Typography>
+        <Typography>
+          W zależności od potrzeb produktu składa się z różnej liczby
+          komponentów, a każdy z nich ma inną wagę. Typowo backend składa się z
+          serwera (np. PHP, C#, Java, Node.js), bazy danych (np. SQL) oraz usług
+          chmurowych (np. AWS, Azure). Kluczowe jest również, aby dane osobowe
+          były odpowiednio chronione, a także zastosowana była kryptografia tam,
+          gdzie jest to wskazane.
+        </Typography>
+      </Box>
     </ServiceLayout>
   );
 }

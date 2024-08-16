@@ -14,7 +14,7 @@ export default function TechnologiesList({
   technologies: ITechnologiesList;
 }) {
   return (
-    <Box>
+    <Box marginLeft={{ xs: 0, md: 3 }}>
       <Typography variant="h6" color={Colors.Accent}>
         Powiązane technologie
       </Typography>

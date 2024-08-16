@@ -11,7 +11,9 @@ export default function LanguageSelector() {
 
   return (
     <Select
-      sx={{ width: 70 }}
+      sx={{
+        width: 70,
+      }}
       value={i18n.language}
       onChange={(e) => handleLanguageChange(e.target.value)}
     >

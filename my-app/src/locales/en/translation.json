@@ -1,5 +1,20 @@
 {
   "my_services": "My services",
   "contact": "Contact",
-  "it_services": "IT Services"
+  "it_services": "IT Services",
+  "professional_it_services": "Professional IT services",
+  "master_cs": "MCS",
+  "web_applications": "Web applications",
+  "cloud": "Cloud",
+  "data_analysis": "Data analysis",
+  "teaching": "Teaching",
+
+  "web_app_why": "Having an application or website is crucial for any type of business. A website can benefit both small businesses and large e-commerce businesses. In the era of mobile internet access, it is important for a company to be visible online.",
+  "web_app_who_can_benefit": "Who can benefit from having a website?",
+  "web_app_who_can_benefit_1": "Individuals who want to build a virtual portfolio (e.g. photographer, graphic designer).",
+  "web_app_who_can_benefit_2": "Small companies for which the website is their business card.",
+  "web_app_who_can_benefit_3": "Medium-sized businesses that can sell services or products online.",
+  "web_app_what_is_key": "What is key to a successful website?",
+  "web_app_what_is_key_1": "Graphic design, preferably consistent with the company logo.",
+  "web_app_what_is_key_2": "Positioning in a search engine, e.g. Google (so-called SEO)."
 }

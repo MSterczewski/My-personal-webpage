@@ -6,10 +6,11 @@ import { AppRoutes } from "./resources/AppRoutes";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Contact from "./pages/Contact/Contact";
 import ContactThankYou from "./pages/Contact/ContactThankYou";
-import MyServices from "./pages/MyServices/MyServices";
 import Home from "./pages/Home/Home";
 import i18next from "i18next";
 import { I18nextProvider } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import LocalStorageBackend from "i18next-localstorage-backend";
 
 import translationEN from "./locales/en/translation.json";
 import translationPL from "./locales/pl/translation.json";
@@ -23,10 +24,13 @@ const resources = {
   },
 };
 
-i18next.init({
+i18next.use(LanguageDetector).init({
   resources,
-  lng: "pl",
+  supportedLngs: ["pl", "en"],
   interpolation: { escapeValue: false }, // React already does escaping
+  backend: {
+    backends: [LocalStorageBackend],
+  },
 });
 
 const root = ReactDOM.createRoot(
@@ -43,16 +47,10 @@ root.render(
             path={AppRoutes.ContactThankYou}
             element={<ContactThankYou />}
           />
-          {/* <Route path={AppRoutes.AboutMe} element={<AboutMe />} /> */}
-          {/* <Route path={AppRoutes.MyProjects} element={<MyProjects />} /> */}
-          <Route path={AppRoutes.MyServices} element={<MyServices />} />
         </Routes>
       </BrowserRouter>
     </I18nextProvider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

@@ -70,16 +70,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Typography>
             {/* <MenuButton text="Moje projekty" url={AppRoutes.MyProjects} /> */}
             {/* <MenuButton text="O mnie" url={AppRoutes.AboutMe} /> */}
-            <MenuButton text={t("my_services")} url={AppRoutes.MyServices} />
             <MenuButton text={t("contact")} url={AppRoutes.Contact} />
             <Box sx={{ flexGrow: 1, display: { xs: "flex" } }} />
-            <Box justifySelf={"flex-end"} marginRight={7}>
+            <Box justifySelf={"flex-end"} marginRight={5}>
               <LanguageSelector />
             </Box>
           </Toolbar>
         </Container>
       </AppBar>
-      {children}
+      <Box paddingLeft={5} paddingRight={5}>
+        {children}
+      </Box>
     </ThemeProvider>
   );
 
@@ -95,7 +96,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         }}
         underline={location.pathname === url ? "always" : "hover"}
         href={url}
-        display={{ xs: "none", sm: "flex" }}
+        // display={{ xs: "none", sm: "flex" }}
+        display={{ xs: "flex" }}
       >
         {text}
       </Link>

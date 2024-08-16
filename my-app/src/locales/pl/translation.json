@@ -1,5 +1,20 @@
 {
   "my_services": "Moje usługi",
   "contact": "Kontakt",
-  "it_services": "Usługi IT"
+  "it_services": "Usługi IT",
+  "professional_it_services": "Profesjonalne usługi informatyczne",
+  "master_cs": "mgr inż.",
+  "web_applications": "Aplikacje internetowe",
+  "cloud": "Chmura",
+  "data_analysis": "Analiza danych",
+  "teaching": "Dydaktyka",
+
+  "web_app_why": "Posiadanie aplikacji lub strony internetowej jest kluczowe dla biznesu niezależnie od jego rodzaju. Dzięki stronie www zyskuje zarówno mała firma, jak i duży e-commerce. W czasie dostępności do internetu zurządzeń mobilnych ważne jest, aby firma była widoczna w sieci.",
+  "web_app_who_can_benefit": "Kto może zyskać na posiadaniu strony internetowej?",
+  "web_app_who_can_benefit_1": "Osoby prywatne, chcące zbudować wirtualne portfolio (np. fotograf, grafik).",
+  "web_app_who_can_benefit_2": "Małe firmy, dla których strona internetowa jest wizytówką.",
+  "web_app_who_can_benefit_3": "Średnie firmy, które mogą sprzedawać usługi lub produkty przez internet.",
+  "web_app_what_is_key": "Co jest kluczowe do sukcesu strony internetowej?",
+  "web_app_what_is_key_1": "Szata graficzna, najlepiej spójna z logotypem firmy.",
+  "web_app_what_is_key_2": "Pozycjonowanie w wyszukiwarce np. Google (tzw. SEO)."
 }

@@ -41,6 +41,13 @@ export default function GetTheme() {
           },
         },
       },
+      MuiSelect: {
+        styleOverrides: {
+          root: {
+            ".MuiOutlinedInput-notchedOutline": { borderColor: "white" },
+          },
+        },
+      },
       // MuiCssBaseline: {
       //   styleOverrides: {
       //     "@font-face": {

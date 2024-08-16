@@ -5,6 +5,7 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . './config/init.php');
 
 
 post('/messages/create', 'api/messages/messages_create');
+post('/events/new', 'api/events/new');
 
 
 
