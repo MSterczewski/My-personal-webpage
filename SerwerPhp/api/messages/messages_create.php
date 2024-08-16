@@ -10,3 +10,5 @@ call_db("INSERT INTO Messages(Title, Email, Body) VALUES(
     '{$data['email']}',
     '{$data['body']}'
     )");
+
+http_response_code(200);

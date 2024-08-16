@@ -11,7 +11,7 @@ if (is_null_or_empty($data['pageName'])  || is_null_or_empty($data['pageSection'
 call_db("INSERT INTO Events(PageName, PageSection, Lang, UserAgent, EventDate) VALUES(
     '{$data['pageName']}',
     '{$data['pageSection']}',
-    '{$data['lang']}'
-    '{$userAgent}'
+    '{$data['lang']}',
+    '{$userAgent}',
     '{$date}'
     )");

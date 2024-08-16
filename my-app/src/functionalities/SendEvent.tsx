@@ -13,7 +13,7 @@ export default function SendEvent({
   const { i18n } = useTranslation();
   useEffect(() => {
     axios
-      .post(process.env.REACT_APP_SERVER_URL + Endpoints.CreateMessage, {
+      .post(process.env.REACT_APP_SERVER_URL + Endpoints.SendEvent, {
         pageName,
         pageSection,
         lang: i18n.language,
